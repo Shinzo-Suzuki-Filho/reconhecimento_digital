@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Shinzo Suzuki - FullStack Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconhecimento Digital</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="icon">👮</span>
+                <h1>SISTEMA INTEGRADO</h1>
+            </div>
+            <div class="status-bar">
+                <span class="status-dot"></span>
+                <span id="connection-status">CONECTADO: SERVIDOR FEDERAL</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Screen 1: Scanner -->
+            <section id="scanner-screen" class="active">
+                <div class="instructions">
+                    <p>POSICIONE O DEDO NO SENSOR</p>
+                    <small>Mantenha pressionado para iniciar a leitura</small>
+                </div>
+                
+                <div class="fingerprint-scanner" id="scanner-btn">
+                    <div class="scan-line"></div>
+                    <div class="fingerprint-icon">
+                        <!-- SVG Fingerprint -->
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 C30 10, 15 25, 15 45 C15 65, 25 80, 25 80" class="ridge" />
+                            <path d="M50 10 C70 10, 85 25, 85 45 C85 65, 75 80, 75 80" class="ridge" />
+                            <path d="M50 20 C35 20, 25 35, 25 50 C25 65, 35 75, 35 75" class="ridge" />
+                            <path d="M50 20 C65 20, 75 35, 75 50 C75 65, 65 75, 65 75" class="ridge" />
+                            <path d="M50 30 C42 30, 35 40, 35 50 C35 60, 40 70, 40 70" class="ridge" />
+                            <path d="M50 30 C58 30, 65 40, 65 50 C65 60, 60 70, 60 70" class="ridge" />
+                            <path d="M50 40 V 80" class="ridge" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="scan-status" id="scan-text">AGUARDANDO...</div>
+            </section>
+
+            <!-- Screen 2: Processing -->
+            <section id="processing-screen" class="hidden">
+                <div class="loader">
+                    <div class="radar"></div>
+                </div>
+                <h2>ANALISANDO BIOMETRIA...</h2>
+                <div class="console-log" id="console-log">
+                    <p>> Iniciando handshake...</p>
+                    <p>> Acessando banco de dados...</p>
+                </div>
+            </section>
+
+            <!-- Screen 3: Result -->
+            <section id="result-screen" class="hidden">
+               <!-- Content injected by JS -->
+            </section>
+        </main>
+
+        <footer>
+            <p>AVISO: Uso exclusivo para agentes autorizados.</p>
+            <p>Versão 1.0.4 - Build 2024</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
